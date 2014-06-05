@@ -1,0 +1,15 @@
+<h1>Mijn Projecten</h1>
+ 
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Beschrijving</th>
+  </tr>
+ 
+  <% @portfolios.each do |portfolio| %>
+    <tr>
+      <td><%= portfolio.title %></td>
+      <td><%= portfolio.text %></td>
+    </tr>
+  <% end %>
+</table>
