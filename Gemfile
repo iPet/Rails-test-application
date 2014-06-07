@@ -7,6 +7,11 @@ gem 'rails', '4.1.1'
 # gem 'sqlite3'
 gem 'pg'
 gem 'devise'
+
+
+#       gem 'therubyracer', :platform => :ruby
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,7 +41,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'haml'
+gem 'haml-rails', :group => :development
 
+#gem 'less-rails'
+
+#gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+gem 'rails_12factor', group: :production
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'carrierwave'
+gem 'foundation-rails'
