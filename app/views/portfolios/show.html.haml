@@ -1,0 +1,9 @@
+%p
+  %strong Title:
+  = @portfolio.title
+%p
+  %strong Text:
+  = @portfolio.text
+%p
+  = image_tag @portfolio.avatar.url
+= link_to 'Terug', portfolios_path

@@ -1,0 +1,17 @@
+%h1 Nieuw Project
+= form_for :portfolio, url: portfolios_path do |f|
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+  %p
+    = f.label :text
+    %br/
+    = f.text_area :text
+  %p
+    = f.label :avatar
+    %br/
+    = f.file_field :avatar
+  %p
+    = f.submit
+= link_to 'Terug', portfolios_path

@@ -1,0 +1,9 @@
+%h1 Mijn Projecten
+%table
+  %tr
+    %th Titel
+    %th Beschrijving
+  - @portfolios.each do |portfolio|
+    %tr
+      %td= portfolio.title
+      %td= portfolio.text
