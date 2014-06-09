@@ -1,0 +1,13 @@
+%h1 New furniture
+= form_for :room, url: furniture_index_path do |f|
+  %p
+    = f.label :description
+    %br/
+    = f.text_field :description
+  %p
+    = f.label @room_id
+    = f.hidden_field :room_id,  :value => @room_id
+  %p
+    = f.submit
+= link_to 'Terug', houses_path
+

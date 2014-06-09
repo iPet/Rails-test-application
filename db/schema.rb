@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605122845) do
+ActiveRecord::Schema.define(version: 20140607102541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "furnitures", force: true do |t|
+    t.string   "description"
+    t.integer  "room_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "furnitures", ["room_id"], name: "index_furnitures_on_room_id", using: :btree
+
+  create_table "houses", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "houses", ["user_id"], name: "index_houses_on_user_id", using: :btree
 
   create_table "portfolios", force: true do |t|
     t.string   "title"
@@ -23,6 +40,15 @@ ActiveRecord::Schema.define(version: 20140605122845) do
     t.datetime "updated_at"
     t.string   "avatar"
   end
+
+  create_table "rooms", force: true do |t|
+    t.string   "description"
+    t.integer  "houses_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rooms", ["houses_id"], name: "index_rooms_on_houses_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

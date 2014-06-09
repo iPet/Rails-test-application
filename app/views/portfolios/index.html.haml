@@ -1,9 +1,8 @@
-%h1 Mijn Projecten
+%h1 Alle huizen
 %table
   %tr
     %th Titel
     %th Beschrijving
-  - @portfolios.each do |portfolio|
+  - @houses.each do |house|
     %tr
-      %td= portfolio.title
-      %td= portfolio.text
+      %td= portfolio.user

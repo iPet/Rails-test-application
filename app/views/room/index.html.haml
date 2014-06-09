@@ -1,0 +1,11 @@
+%h1 All your rooms
+%table
+  %tr
+    %th Room:
+    %th Date
+    %th
+  - @rooms.each do |room|
+    %tr
+      %td= room.description
+      %td= room.created_at
+      %td= link_to 'View', :action => :show, :id => room.id

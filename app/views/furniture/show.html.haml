@@ -1,0 +1,11 @@
+%p
+  %strong Furniture:
+  = @furniture.description
+%p
+  %strong Room:
+  = @furniture.room_id
+%p
+
+
+
+= link_to 'Back', room_path(:id => @furniture.room_id)

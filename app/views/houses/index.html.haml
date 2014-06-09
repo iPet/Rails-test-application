@@ -1,0 +1,14 @@
+%h1 All your houses
+%table
+  %tr
+    %th Id
+    %th Date
+    %th
+  - @houses.each do |house|
+    %tr
+      %td= house.id
+      %td= house.created_at
+      %td= link_to 'View', :action => :show, :id => house.id
+
+
+= link_to 'Back', root_path

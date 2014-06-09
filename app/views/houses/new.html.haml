@@ -1,0 +1,9 @@
+%h1 New House
+= form_for :house, url: houses_path do |f|
+  %p
+    = f.label current_user.id
+    = f.hidden_field :user_id,  :value => current_user.id
+ 
+  %p
+    = f.submit "Create new house"
+= link_to 'Back', houses_path
