@@ -1,14 +1,11 @@
-%p
-  %strong Room:
+%h1
   = @room.description
 %p
-  %strong House:
-  = @room.house_id
-%p
+
 
 %table
   %tr
-    %th Id
+    %th Furniture
     %th Date
     %th
   - @furnitures.each do |furniture|
@@ -20,11 +17,9 @@
 %p New Furniture
 = form_for :furniture, url: furniture_index_path do |f|
   %p
-    = f.label :description
-    %br/
     = f.text_field :description
     = f.hidden_field :room_id,  :value => @room.id
   %p
-    = f.submit
+    = f.submit "Add new furniture", :class => 'button tiny'
 
-  = link_to 'Back', house_path(:id => @room.house_id)
+  = link_to 'Back', house_path(:id => @room.house_id), :class => 'button tiny'

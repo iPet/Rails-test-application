@@ -1,12 +1,12 @@
 %p
   %strong House number:
   = @house.id
+
 %p
-  %strong Owner:
-  = @house.user_id
-%p
-%table
-  %tr
+%table 
+  %tr 
+    All your rooms
+    %br/
     %th Room
     %th Date
     %th
@@ -17,15 +17,13 @@
       %td= link_to 'View', :controller => 'room', :action => :show, :id => room.id
 
 
-%h1 New room
+%p New room
 = form_for :room, url: room_index_path do |f|
   %p
-    = f.label :description
-    %br/
     = f.text_field :description
     = f.hidden_field :house_id,  :value => @house.id
   %p
-    = f.submit 'Add room'
+    = f.submit 'Add room', :class => 'button tiny'
 
 
 
@@ -33,4 +31,4 @@
 
 
 
-= link_to 'Back', houses_path
+= link_to 'Back', houses_path, :class => 'button tiny'

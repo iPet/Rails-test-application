@@ -2,8 +2,12 @@
 @import "foundation";
 
 // override for the 'Home' navigation link
+.top-bar {
+  color: white;
+}
 .top-bar .name {
   font-size: rem-calc(13);
+  color: white;
   line-height: 45px; }
 .top-bar .name a {
   font-weight: normal;
@@ -41,10 +45,12 @@
 main {
   @include twelve-columns;
   background-color: #eee;
+  height: 90%;
   }
 section {
   @extend .row;
   margin-top: 20px;
+
   }
 
 // Styles for form views
