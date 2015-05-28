@@ -15,30 +15,21 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+	adapter: postgresql 
+	encoding: utf8 
+	database: docker 
+	username: docker 
+	password: docker
+	pool: 5 # not mandatory 		
+	timeout: 5000 # not mandatory 
+	host: 188.166.29.77 
+	port:32769
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: application_database
-  pool: 5
-  username: user
-  password: Abc123
+  <<: *default
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: myapp_test
-  pool: 5
-  username: user
-  password: Abc123
+  <<: *default
 
 production:
   <<: *default
-  database: Application_production
-  username: user
-  password: Abc123
